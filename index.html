@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Romântico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff6f61;
+        }
+
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .message {
+            font-size: 1.5rem;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .countdown {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff6f61;
+        }
+
+        .photo img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        audio {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Nosso Site Romântico</h1>
+        <p class="message">Palmeiras ganhou de 2x0 do Corinthians</p>
+        <p class="countdown" id="countdown"></p>
+
+        <div class="photo">
+            <img src="https://drive.google.com/uc?export=view&id=1ithEe1j3Qb26cYlul0kYVa_lTwzjUaEW" alt="Foto do Casal">
+        </div>
+
+        <audio controls>
+            <source src="https://drive.google.com/uc?export=download&id=1j_n8gXmp6YJP4ZJRGPS1GPAibJ9-Jpyy" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </div>
+
+    <script>
+        // Configuração do contador
+        var countDownDate = new Date().getTime() + (11 * 24 * 60 * 60 * 1000); // 11 dias a partir de agora
+
+        var countdownfunction = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            document.getElementById("countdown").innerHTML = days + " dias restantes até a nossa comemoração!";
+
+            if (distance < 0) {
+                clearInterval(countdownfunction);
+                document.getElementById("countdown").innerHTML = "A comemoração chegou!";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
